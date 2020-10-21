@@ -7,6 +7,7 @@
     "start": "nodemon server/index.js",
     "serve": "pm2 start server/index.js",
     "stop": "pm2 stop server/index.js",
+    "build": "next build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
