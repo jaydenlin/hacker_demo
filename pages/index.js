@@ -17,8 +17,8 @@ class Homepage extends React.Component {
       return (
       <div className={s.wrapper}>
         Hello World
-        <a className={s.btn} onClick={this.onSameDomainSend}>同源請求 (Same-Domain)</a>
-        <a className={s.btn} onClick={this.onCrossSameDomainSend}>跨源請求 (Cross-Domain)</a>
+        <a className={s.btn} onClick={this.onSameDomainSend}>同源請求 (Same-Origin)</a>
+        <a className={s.btn} onClick={this.onCrossSameDomainSend}>跨源請求 (Cross-Origin)</a>
       </div>);
     }
   }
