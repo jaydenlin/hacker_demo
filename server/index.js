@@ -16,7 +16,7 @@ app.prepare()
 
     const server = decorateApp(express());
     server.use(cookieParser());
-    // server.use(bodyParser());
+    server.use(bodyParser());
 
     //在這裡處理接收的 request
     server.get(`/api/me`, (req, res) => {

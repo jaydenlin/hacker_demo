@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports = {
 
     setRoutes: (server, apiHost)=>{
-        
+
         server.getAsync(`/api/posts`, async (req, res) => {
             const response = await axios.get(`${apiHost}/posts`);
             return res.send(response.data);
@@ -17,6 +17,11 @@ module.exports = {
         server.getAsync(`/api/posts/:postId/comments`, async (req, res) => {
             const response = await axios.get(`${apiHost}/posts/${req.params.postId}/comments`);
             return res.send(response.data);
+        });
+
+        server.postAsync(`/api/dummy`, async (req, res) => {
+            console.log(req.body);
+            return res.send(req.body);
         });
     }
 }
