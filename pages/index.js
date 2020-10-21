@@ -5,11 +5,11 @@ class Homepage extends React.Component {
     static getInitialProps({query}) {
       return {query}
     }
-    onSameDomainSend = async ()=>{
+    onSameOriginSend = async ()=>{
         const response = await axios.get('/api/me');
         console.log(response.data);
     }
-    onCrossSameDomainSend = async ()=>{
+    onCrossOriginSend = async ()=>{
         const response = await axios.get('/api/me');
         console.log(response.data);
     }
@@ -17,8 +17,8 @@ class Homepage extends React.Component {
       return (
       <div className={s.wrapper}>
         Hello World
-        <a className={s.btn} onClick={this.onSameDomainSend}>同源請求 (Same-Origin)</a>
-        <a className={s.btn} onClick={this.onCrossSameDomainSend}>跨源請求 (Cross-Origin)</a>
+        <a className={s.btn} onClick={this.onSameOriginSend}>同源請求 (Same-Origin)</a>
+        <a className={s.btn} onClick={this.onCrossOriginSend}>跨源請求 (Cross-Origin)</a>
       </div>);
     }
   }
