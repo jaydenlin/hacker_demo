@@ -21,10 +21,17 @@ app.prepare()
     //在這裡處理接收的 request
     server.get(`/api/me`, (req, res) => {
         return res.send({
-            'name': 'hello'
+            'name': 'hello2'
         });
     });
 
+    server.get('/document/:id', function(req, res){
+      var id = req.params.id,
+          path = `static/${id}`;
+      console.log(path);
+      //return res.sendFile(path, {root: './static/'});
+      return res.sendFile(path, {root: './'});
+    });
     // server.use((req, res, next) => {
     //   res.cookie('hello', 'yes', {
     //       path: '/'
