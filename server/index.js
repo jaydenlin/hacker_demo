@@ -25,12 +25,12 @@ app.prepare()
         });
     });
 
-    // server.use((req, res, next) => {
-    //   res.cookie('hello', 'yes', {
-    //       path: '/'
-    //   });
-    //   next();
-    // });
+    server.use((req, res, next) => {
+      res.cookie('hello_from_server', 'hello', {
+          path: '/'
+      });
+      next();
+    });
 
     apiRoutes.setRoutes(server, apiHost);
 
