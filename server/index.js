@@ -32,12 +32,6 @@ app.prepare()
       //return res.sendFile(path, {root: './static/'});
       return res.sendFile(path, {root: './'});
     });
-    // server.use((req, res, next) => {
-    //   res.cookie('hello', 'yes', {
-    //       path: '/'
-    //   });
-    //   next();
-    // });
 
     apiRoutes.setRoutes(server, apiHost);
 
